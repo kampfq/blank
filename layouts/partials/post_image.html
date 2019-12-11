@@ -1,0 +1,3 @@
+{{ if .Params.thumbnail }}
+<img loading="lazy" src="{{ with .Params.thumbnail }}{{ . }}{{ end }}" />
+{{ end }}

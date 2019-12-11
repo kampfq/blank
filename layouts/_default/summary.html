@@ -1,4 +1,4 @@
-<article id="content" class="page hentry">
+<article class="content">
 		<h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
 		<div class="entry-meta">
 		<span class="posted-on"><a href="{{ .Permalink }}" rel="bookmark"><time class="entry-date published updated">{{ .Date.Format "02.01.2006 15:04" }}</time></a></span>
@@ -6,7 +6,8 @@
 	{{ range .Params.tags }}
 	<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
 	{{ end }}
-</div>
+		</div>
+		{{ partial "post_image.html" . }}
 	<div>
 		{{ .Summary }}
 		{{ if .Truncated }}
