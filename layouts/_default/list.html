@@ -1,16 +1,16 @@
 {{ define "main" }}
-	<main>
+	<main id="main">
 		{{ if or .Title .Content }}
-		<div>
+		<div class="hero">
 			{{ with .Title }}<h1>{{ . }}</h1>{{ end }}
 			{{ with .Content }}<div>{{ . }}</div>{{ end }}
 		</div>
 		{{ end }}
 
-		{{ range .Paginator.Pages }}
+		{{ range .Paginator.Pages.ByDate }}
 			{{ .Render "summary" }}
 		{{ end }}
 		{{ partial "pagination.html" . }}
 	</main>
-{{ partial "sidebar.html" . }}
+{{/* partial "sidebar.html" .  */}}
 {{ end }}

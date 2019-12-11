@@ -1,12 +1,21 @@
-<header>
-	<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+<header id="masthead">
+	<p><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></p>
+	
 	{{ with .Site.Menus.main }}
-	<nav>
-		<ul>
+	<nav role="navigation">
+			<div id="menuToggle">
+					<input type="checkbox" />
+
+	<span></span>
+    <span></span>
+    <span></span>
+    
+		<ul id="menu">
 			{{ range . }}
 			<li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
 			{{ end }}
 		</ul>
+		</div>
 	</nav>
 	{{ end }}
 </header>
