@@ -3,7 +3,9 @@
 		<article class="content">
 			<h1>{{ .Title }}</h1>
 			<div class="entry-meta">
-					<span class="posted-on"><a href="{{ .Permalink }}" rel="bookmark"><time class="entry-date published updated">{{ .Date.Format "02.01.2006 15:04" }}</time></a></span>
+					<span class="posted-on">
+						<div rel="bookmark" class="entry-date published updated">{{ .Date.Format "02.01.2006 15:04" }}</div>
+					</span>
 			</div>
 			
 			{{ partial "post_image.html" . }}
