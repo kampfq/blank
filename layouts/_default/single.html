@@ -14,6 +14,16 @@
 				{{ .Content }}
 			</div>
 
+			{{ with .Params.tags }}
+
+			<span class="tags-links">
+				Tags:
+					{{ range . }}
+					<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a>
+					{{ end }}
+				</span>
+			{{ end }}
+
 			<div id="pagination">
 					{{ with .PrevInSection }}
 					<a href="{{ .Permalink }}">prev: {{ .Title }}</a>
@@ -23,18 +33,6 @@
 			  <a href="{{ .Permalink }}">next: {{ .Title }}</a>
 			{{ end }}
 			</div>
-
-
-
-			{{ with .Params.tags }}
-
-			<span class="tags-links">
-				Tags:
-					{{ range . }}
-					<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
-					{{ end }}
-				</span>
-			{{ end }}
 
 
 
