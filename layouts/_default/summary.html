@@ -4,7 +4,7 @@
 		<span class="posted-on"><a class="entry-date published updated" href="{{ .Permalink }}" rel="bookmark">{{ .Date.Format "02.01.2006 15:04" }}</a></span>
 	
 	{{ range .Params.tags }}
-	<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+	<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a>
 	{{ end }}
 		</div>
 		{{ partial "post_image.html" . }}
